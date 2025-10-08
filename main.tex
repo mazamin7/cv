@@ -1,145 +1,200 @@
-%%%%%%%%%%%%%%%
-% CV of Gerardo Cicalese
-% Clean academic version for PhD and research use
-\documentclass[a4paper,skipsamekey,11pt,english]{curve}
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
 
-\PassOptionsToPackage{style=ieee,sorting=ydnt,uniquename=init,defernumbers=true}{biblatex}
-\usepackage{settings}
-\DefineBibliographyStrings{english}{url={\textsc{url}}}
+% Colors
+\definecolor{accent}{HTML}{2E86AB}
+\definecolor{heading}{HTML}{000000}
 
-\mynames{Cicalese/Gerardo}
+% Section formatting
+\usepackage{titlesec}
+\titleformat{\section}
+  {\Large\bfseries\color{heading}}
+  {}{0em}{}[\titlerule]
 
-\ifxetexorluatex
-  \usepackage{fontspec}
-  \usepackage[p,osf,swashQ]{cochineal}
-  \usepackage[medium,bold]{cabin}
-  \usepackage[varqu,varl,scale=0.9]{zi4}
-\else
-  \usepackage[T1]{fontenc}
-  \usepackage[p,osf,swashQ]{cochineal}
-  \usepackage{cabin}
-  \usepackage[varqu,varl,scale=0.9]{zi4}
-\fi
+% Better line spacing
+\usepackage{setspace}
+\setstretch{1.1}
 
-\includecomment{fullonly}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\leftheader{%
-  {\LARGE\bfseries\sffamily Gerardo Cicalese}
-
-  \makefield{\faUniversity}{Politecnico di Milano}
-  \makefield{\faGraduationCap}{Ph.D. Student in Mathematical Models and Methods in Engineering}
-
-  % Optional contact info:
-  % \makefield{\faEnvelope[regular]}{\href{mailto:gerardo.cicalese@example.com}{\texttt{gerardo.cicalese@example.com}}}
-  % \makefield{\faLinkedin}{\href{https://www.linkedin.com/in/gerardocicalese}{\texttt{linkedin.com/in/gerardocicalese}}}
+% Custom commands with proper indentation
+\newcommand{\cvitem}[3]{%
+  \vspace{0.3em}%
+  \noindent\textbf{#1} \hfill #2 \\
+  \noindent\textit{#3}%
+  \vspace{0.2em}%
 }
 
-\rightheader{}
+\newcommand{\cvdetail}[1]{%
+  \begin{adjustwidth}{1em}{0em}
+    #1
+  \end{adjustwidth}%
+  \vspace{0.5em}%
+}
 
-\begin{fullonly}
-\photo[r]{photo}
-\photoscale{0.13}
-\end{fullonly}
+\newcommand{\cvsubitem}[2]{%
+  \vspace{0.3em}%
+  \noindent\textbf{#1} \hfill #2%
+  \vspace{0.2em}%
+}
 
-\title{Curriculum Vitae}
+% For the adjustwidth environment
+\usepackage{changepage}
+
+% Better itemize spacing
+\setlist[itemize]{leftmargin=*, itemsep=0.1em, parsep=0.1em, topsep=0.2em}
 
 \begin{document}
-\makeheaders[c]
 
-%%% --- EDUCATION ---------------------------------------------------------
-\begin{rubric}{Education}
-\entry*[2023--present]%
-	\textbf{Ph.D. in Mathematical Models and Methods in Engineering}, Politecnico di Milano, Italy.
-	\par Thesis: \emph{Hybrid numerical methods for the design of acoustically comfortable environments.}
+% Header
+\begin{center}
+  {\Huge\bfseries Gerardo Cicalese}\\[0.3em]
+  {\large Ph.D. Student in Mathematical Models and Methods in Engineering}\\[0.2em]
+  Politecnico di Milano \quad | \quad 
+  \href{mailto:gerardo.cicalese7@gmail.com}{gerardo.cicalese7@gmail.com}
+\end{center}
 
-\entry*[2021--2023]%
-	\textbf{M.Sc. in Music and Acoustic Engineering}, Politecnico di Milano, Italy.
-	\par Thesis: \emph{Efficient techniques for accurate sound propagation modeling in virtual acoustics.}
-	\par Final mark: 110L/110.
+\vspace{0.5em}
 
-\entry*[2018--2021]%
-	\textbf{B.Sc. in Computer Engineering}, University of Salerno, Italy.
-	\par Thesis: \emph{Analisi e test di Jukebox, una piattaforma per la generazione di pattern musicali.}
-	\par Final mark: 110L/110.
+% Education
+\section{Education}
 
-\entry*[2013--2018]%
-	\textbf{Scientific High School Diploma}, Liceo Scientifico ``Nicola Sensale'', Nocera Inferiore, Italy.
-	\par Final mark: 98/100.
-\end{rubric}
+\cvitem{Ph.D. in Mathematical Models and Methods in Engineering}{2023--present}
+{Politecnico di Milano, Italy}
+\cvdetail{Thesis: Hybrid numerical methods for the design of acoustically comfortable environments.\\
+Supervisors: Prof. Ilario Mazzieri, Prof. Gabriele Ciaramella\\
+Research Group: MOX - Modeling and Scientific Computing Laboratory}
 
-%%% --- RESEARCH INTERESTS ------------------------------------------------
-\begin{rubric}{Research Interests}
-\entry*[2023--present]%
-	Numerical methods for wave propagation and acoustics
-	\par Domain decomposition and waveform relaxation methods  
-	\par Parallel computing for scientific simulations
-	\par Virtual/augmented reality and auralization
-	\par Machine learning for acoustic field prediction
-\end{rubric}
+\cvitem{M.Sc. in Music and Acoustic Engineering}{2021--2023}
+{Politecnico di Milano, Italy}
+\cvdetail{Thesis: Efficient techniques for accurate sound propagation modeling in virtual acoustics.\\Final mark: 110L/110.}
 
-%%% --- PUBLICATIONS ------------------------------------------------------
-\begin{rubric}{Publications}
-\entry*[2024]%
-	\textbf{Addressing Atmospheric Absorption in Adaptive Rectangular Decomposition.}
-	\par \textit{The Journal of the Acoustical Society of America}, 156(4):2328--2339.
-	\par Gerardo Cicalese, Gabriele Ciaramella, Ilario Mazzieri.
+\cvitem{B.Sc. in Computer Engineering}{2018--2021}
+{University of Salerno, Italy}
+\cvdetail{Thesis: Analisi e test di Jukebox, una piattaforma per la generazione di pattern musicali.\\Final mark: 110L/110.}
 
-\entry*[In Prep.]%
-	\textbf{Optimized Schwarz Waveform Relaxation for the Damped Wave Equation.}
-	\par Gerardo Cicalese, Gabriele Ciaramella, Ilario Mazzieri, Martin J. Gander.
-\end{rubric}
+\cvitem{Scientific High School Diploma}{2013--2018}
+{Liceo Scientifico "Nicola Sensale", Nocera Inferiore, Italy}
+\cvdetail{Final mark: 98/100.}
 
-%%% --- CONFERENCES -------------------------------------------------------
-\begin{rubric}{Conferences and Presentations}
-\entry*[2025]%
-	\textbf{Swiss Numerical Analysis Day 2025}, Basel
-	\par Poster: \emph{Enhancing Adaptive Rectangular Decomposition with Atmospheric Absorption Modeling}
+% Research Interests
+\section{Research Interests}
 
-\entry*[2025]%
-	\textbf{Domain Decomposition 29 (DD29)}, Milan
-	\par Poster: \emph{Enhancing Adaptive Rectangular Decomposition with Atmospheric Absorption Modeling}
-	\par Talk: \emph{Optimized Red--Black Waveform Relaxation for the Damped Wave Equation}
+\begin{itemize}
+  \item Numerical methods for wave propagation and acoustics
+  \item Domain decomposition and waveform relaxation methods
+  \item Parallel computing for scientific simulations
+  \item Virtual/augmented reality and auralization
+  \item Machine learning for acoustic field prediction
+\end{itemize}
 
-\entry*[2025]%
-	\textbf{SIMAI 2025}, Trieste
-	\par Talk: \emph{Optimized Red--Black Waveform Relaxation for the Damped Wave Equation}
-\end{rubric}
+% Publications
+\section{Publications}
 
-%%% --- RESEARCH STAYS ----------------------------------------------------
-\begin{rubric}{Research Stays}
-\entry*[2025]%
-	\textbf{Université de Genève}, Switzerland
-	\par Research visits supervised by Prof. Martin J. Gander
-	\par March--May 2025; September--November 2025
-\end{rubric}
+\cvsubitem{Addressing Atmospheric Absorption in Adaptive Rectangular Decomposition}{2024}
+\cvdetail{\textit{The Journal of the Acoustical Society of America}, 156(4):2328--2339.\\Gerardo Cicalese, Gabriele Ciaramella, Ilario Mazzieri.}
 
-%%% --- TEACHING ----------------------------------------------------------
-\begin{rubric}{Teaching Experience}
-\entry*[2023--2025]%
-	\textbf{Teaching Assistant}, \emph{Curve e superfici per il design}
-	\par Prof. Gabriele Ciaramella, Politecnico di Milano
+\cvsubitem{Optimized Schwarz Waveform Relaxation for the Damped Wave Equation}{In preparation}
+\cvdetail{Gerardo Cicalese, Gabriele Ciaramella, Ilario Mazzieri, Martin J. Gander.}
 
-\entry*[2023--2024]%
-	\textbf{Teaching Assistant}, \emph{Calcolo numerico}
-	\par Prof. Carlo De Falco, Politecnico di Milano
-\end{rubric}
+\newpage
+% Conferences
+\section{Conferences and Presentations}
 
-%%% --- SKILLS ------------------------------------------------------------
-\begin{rubric}{Skills}
-\entry*[Programming]%
-	MATLAB, Python, C/C++, \LaTeX
+\cvsubitem{Swiss Numerical Analysis Day 2025}{Basel}
+\cvdetail{Poster: \textit{Enhancing Adaptive Rectangular Decomposition with Atmospheric Absorption Modeling}}
 
-\entry*[Scientific Tools]%
-	COMSOL Multiphysics, Intel VTune Profiler, OpenMP
+\cvsubitem{Domain Decomposition 29 (DD29)}{Milan}
+\cvdetail{Poster: \textit{Enhancing Adaptive Rectangular Decomposition with Atmospheric Absorption Modeling}\\Talk: \textit{Optimized Red--Black Waveform Relaxation for the Damped Wave Equation}}
 
-\entry*[Numerical Methods]%
-	Finite Difference Time Domain (FDTD), Finite Element Method (FEM), Domain Decomposition, Waveform Relaxation
+\cvsubitem{SIMAI 2025}{Trieste}
+\cvdetail{Talk: \textit{Optimized Red--Black Waveform Relaxation for the Damped Wave Equation}}
 
-\entry*[Languages]%
-	Italian (native), English (fluent, C1 level)
-\end{rubric}
+% Research Stays
+\section{Research Stays}
 
-%%% --- END ---------------------------------------------------------------
+\cvsubitem{Université de Genève}{Switzerland, 2025}
+\cvdetail{Research visits supervised by Prof. Martin J. Gander (March--May 2025; September--November 2025)}
+
+% Teaching
+\section{Teaching Experience}
+
+\cvsubitem{Teaching Assistant: Curve e superfici per il design}{2023--2025}
+\cvdetail{Prof. Gabriele Ciaramella, Politecnico di Milano}
+
+\cvsubitem{Teaching Assistant: Calcolo numerico}{2023--2024}
+\cvdetail{Prof. Carlo De Falco, Politecnico di Milano}
+
+% Professional Development
+\section{Professional Development}
+
+\cvsubitem{CIME School "PDEs, Control and Deep Learning"}{July 2024}
+\cvdetail{Cetraro, Italy - Intensive course on partial differential equations and machine learning}
+
+\cvsubitem{Domain Decomposition Conference Courses}{2025}
+\cvdetail{Pre-conference training courses at DD29}
+
+% Skills
+\section{Skills}
+
+\begin{itemize}
+  \item \textbf{Programming:} MATLAB, Python, C/C++, \LaTeX
+  \item \textbf{Scientific Tools:} COMSOL Multiphysics, Intel VTune Profiler, OpenMP
+  \item \textbf{Numerical Methods:} FDTD, FEM, Domain Decomposition, Waveform Relaxation
+  \item \textbf{Operating Systems:} Windows (strong experience), Linux/Unix (basic experience)
+  \item \textbf{Languages:} Italian (native), English (C1 Cambridge Certified), French (basic comprehension)
+\end{itemize}
+
+\newpage
+% Open Source Contributions
+\section{Open Source Contributions}
+
+\cvsubitem{Personal GitHub Repository}{}
+\cvdetail{\url{https://github.com/mazamin7} - Public code repositories including:}
+
+\begin{itemize}
+  \item \textbf{WASAbi (Wave-based Acoustic Simulator using ARD)} 
+        \newline C++ implementation of Adaptive Rectangular Decomposition (ARD) with frequency-dependent atmospheric absorption in 2.5D (3D with constant height). Extends ARD-simulator with atmospheric absorption modeling based on published research in JASA.
+  
+  \item \textbf{Rhythm Wheel}
+        \newline Interactive drum machine with circular rhythm visualization. Web application built with Vue.js and Tone.js that represents rhythms in a circular format for easier visualization and creative expression.
+  
+  \item \textbf{Chordophone Champion}
+        \newline Music videogame using interaction design principles. Combines SuperCollider audio synthesis with Processing visualization, controlled via smartphone orientation using MultiSense OSC.
+  
+  \item \textbf{FM Synth}
+        \newline Frequency modulation synthesis instrument implemented in SuperCollider. Custom synthesizer for creating complex timbres and experimental sounds using FM synthesis techniques.
+  
+  \item \textbf{YetAnotherAutoWah}
+        \newline Auto-wah-wah audio plugin built with JUCE framework. Features dynamic passband filtering with customizable modulation waveforms and real-time parameter control through an intuitive GUI.
+  
+  \item \textbf{SonicBlend}
+        \newline Cross-synthesis application in MATLAB for audio signal processing. Implements LPC-based cross-synthesis with configurable parameters for carrier/modulator analysis and multiple solution methods including Wiener-Hopf and gradient descent.
+\end{itemize}
+
+% Professional Memberships
+\section{Professional Memberships}
+
+\begin{itemize}
+  \item SIMAI (Società Italiana di Matematica Applicata e Industriale)
+\end{itemize}
+
+% Media Coverage
+\section{Media Coverage}
+
+\cvsubitem{Research Featured in La Provincia di Cremona}{2023}
+\cvdetail{"L'acustica per il metaverso: gli ingegneri protagonisti" - \href{https://www.laprovinciacr.it/news/cronaca/418996/lacustica-per-il-metaverso-gli-ingegneri-protagonisti.html}{Read article online}}
+\cvsubitem{Feature interview about acoustic engineering research with Insieme News}{2023}
+\cvdetail{"Inseguendo il suono" - \href{https://www.insiemenews.it/2023/10/23/inseguendo-il-suono/}{Read article online}}
+
+% References
+\section{References}
+
+\begin{itemize}
+  \item Available upon request
+\end{itemize}
+
 \end{document}
