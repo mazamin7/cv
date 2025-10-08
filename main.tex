@@ -1,0 +1,145 @@
+%%%%%%%%%%%%%%%
+% CV of Gerardo Cicalese
+% Clean academic version for PhD and research use
+\documentclass[a4paper,skipsamekey,11pt,english]{curve}
+
+\PassOptionsToPackage{style=ieee,sorting=ydnt,uniquename=init,defernumbers=true}{biblatex}
+\usepackage{settings}
+\DefineBibliographyStrings{english}{url={\textsc{url}}}
+
+\mynames{Cicalese/Gerardo}
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage[medium,bold]{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\fi
+
+\includecomment{fullonly}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftheader{%
+  {\LARGE\bfseries\sffamily Gerardo Cicalese}
+
+  \makefield{\faUniversity}{Politecnico di Milano}
+  \makefield{\faGraduationCap}{Ph.D. Student in Mathematical Models and Methods in Engineering}
+
+  % Optional contact info:
+  % \makefield{\faEnvelope[regular]}{\href{mailto:gerardo.cicalese@example.com}{\texttt{gerardo.cicalese@example.com}}}
+  % \makefield{\faLinkedin}{\href{https://www.linkedin.com/in/gerardocicalese}{\texttt{linkedin.com/in/gerardocicalese}}}
+}
+
+\rightheader{}
+
+\begin{fullonly}
+\photo[r]{photo}
+\photoscale{0.13}
+\end{fullonly}
+
+\title{Curriculum Vitae}
+
+\begin{document}
+\makeheaders[c]
+
+%%% --- EDUCATION ---------------------------------------------------------
+\begin{rubric}{Education}
+\entry*[2023--present]%
+	\textbf{Ph.D. in Mathematical Models and Methods in Engineering}, Politecnico di Milano, Italy.
+	\par Thesis: \emph{Hybrid numerical methods for the design of acoustically comfortable environments.}
+
+\entry*[2021--2023]%
+	\textbf{M.Sc. in Music and Acoustic Engineering}, Politecnico di Milano, Italy.
+	\par Thesis: \emph{Efficient techniques for accurate sound propagation modeling in virtual acoustics.}
+	\par Final mark: 110L/110.
+
+\entry*[2018--2021]%
+	\textbf{B.Sc. in Computer Engineering}, University of Salerno, Italy.
+	\par Thesis: \emph{Analisi e test di Jukebox, una piattaforma per la generazione di pattern musicali.}
+	\par Final mark: 110L/110.
+
+\entry*[2013--2018]%
+	\textbf{Scientific High School Diploma}, Liceo Scientifico ``Nicola Sensale'', Nocera Inferiore, Italy.
+	\par Final mark: 98/100.
+\end{rubric}
+
+%%% --- RESEARCH INTERESTS ------------------------------------------------
+\begin{rubric}{Research Interests}
+\entry*[2023--present]%
+	Numerical methods for wave propagation and acoustics
+	\par Domain decomposition and waveform relaxation methods  
+	\par Parallel computing for scientific simulations
+	\par Virtual/augmented reality and auralization
+	\par Machine learning for acoustic field prediction
+\end{rubric}
+
+%%% --- PUBLICATIONS ------------------------------------------------------
+\begin{rubric}{Publications}
+\entry*[2024]%
+	\textbf{Addressing Atmospheric Absorption in Adaptive Rectangular Decomposition.}
+	\par \textit{The Journal of the Acoustical Society of America}, 156(4):2328--2339.
+	\par Gerardo Cicalese, Gabriele Ciaramella, Ilario Mazzieri.
+
+\entry*[In Prep.]%
+	\textbf{Optimized Schwarz Waveform Relaxation for the Damped Wave Equation.}
+	\par Gerardo Cicalese, Gabriele Ciaramella, Ilario Mazzieri, Martin J. Gander.
+\end{rubric}
+
+%%% --- CONFERENCES -------------------------------------------------------
+\begin{rubric}{Conferences and Presentations}
+\entry*[2025]%
+	\textbf{Swiss Numerical Analysis Day 2025}, Basel
+	\par Poster: \emph{Enhancing Adaptive Rectangular Decomposition with Atmospheric Absorption Modeling}
+
+\entry*[2025]%
+	\textbf{Domain Decomposition 29 (DD29)}, Milan
+	\par Poster: \emph{Enhancing Adaptive Rectangular Decomposition with Atmospheric Absorption Modeling}
+	\par Talk: \emph{Optimized Red--Black Waveform Relaxation for the Damped Wave Equation}
+
+\entry*[2025]%
+	\textbf{SIMAI 2025}, Trieste
+	\par Talk: \emph{Optimized Red--Black Waveform Relaxation for the Damped Wave Equation}
+\end{rubric}
+
+%%% --- RESEARCH STAYS ----------------------------------------------------
+\begin{rubric}{Research Stays}
+\entry*[2025]%
+	\textbf{Université de Genève}, Switzerland
+	\par Research visits supervised by Prof. Martin J. Gander
+	\par March--May 2025; September--November 2025
+\end{rubric}
+
+%%% --- TEACHING ----------------------------------------------------------
+\begin{rubric}{Teaching Experience}
+\entry*[2023--2025]%
+	\textbf{Teaching Assistant}, \emph{Curve e superfici per il design}
+	\par Prof. Gabriele Ciaramella, Politecnico di Milano
+
+\entry*[2023--2024]%
+	\textbf{Teaching Assistant}, \emph{Calcolo numerico}
+	\par Prof. Carlo De Falco, Politecnico di Milano
+\end{rubric}
+
+%%% --- SKILLS ------------------------------------------------------------
+\begin{rubric}{Skills}
+\entry*[Programming]%
+	MATLAB, Python, C/C++, \LaTeX
+
+\entry*[Scientific Tools]%
+	COMSOL Multiphysics, Intel VTune Profiler, OpenMP
+
+\entry*[Numerical Methods]%
+	Finite Difference Time Domain (FDTD), Finite Element Method (FEM), Domain Decomposition, Waveform Relaxation
+
+\entry*[Languages]%
+	Italian (native), English (fluent, C1 level)
+\end{rubric}
+
+%%% --- END ---------------------------------------------------------------
+\end{document}
