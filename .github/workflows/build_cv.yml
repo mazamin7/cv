@@ -1,0 +1,32 @@
+name: Build and Release CV
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write 
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv.tex
+          latexmk_use_xelatex: true 
+
+      - name: Upload Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/') != true
+        with:
+          tag_name: latest
+          files: cv.pdf
+          title: "Latest CV Build"
+          body: "Automated build from the latest commit."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
